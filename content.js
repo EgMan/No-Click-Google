@@ -7,7 +7,24 @@ Element.prototype.documentOffsetTop = function () {
 
 let selected_element = null;
 function doc_keyUp(e) {
+    if (e.keyCode == 27)
+    {
+        document.getElementsByClassName("gLFyf gsfi")[0].blur();
+    }
+    if (document.activeElement.nodeName == "INPUT")
+    {
+        return;
+    }
     let numPressed = e.keyCode - 49;
+    if (e.keyCode == 13 && selected_element != null)
+    {
+        selected_element.click();
+    }
+    if (numPressed == -1)
+    {
+        document.getElementsByClassName("gLFyf gsfi")[0].focus();
+        document.getElementsByClassName("gLFyf gsfi")[0].select();
+    }
     if (numPressed < 0 || numPressed > rows.length) {
         return;
     }
