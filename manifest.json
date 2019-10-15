@@ -15,5 +15,8 @@
         "style.css"
       ]
     }
-  ]
+  ],
+  "icons": {
+    "128": "icon128.png"
+  }
 }
